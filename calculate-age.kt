@@ -37,6 +37,9 @@ fun command(int:Int):String {
         }
     }
 
+
+
+/*---------------------------------------------------- */
 // main (test)
 fun main() {
 // step1
@@ -49,7 +52,11 @@ if(year.count() == 4){
 // step2
     var cmd2 = command(2) // Enter your Birth Month
     println(cmd2)
-    val month = readln()
+    var month = readln()
+    if(month.count() >= 1){
+        println(month)
+    }
+    
     if(month.count() <= 2){
         println("You wrote down the month of $month with a length of ${month.count()}!")
 
@@ -61,12 +68,17 @@ if(year.count() == 4){
             println("You wrote down the day of $day with a length of ${day.count()}!")
 
             // get birthdate in localDate format
-
+            val birthdate = LocalDate.of(year.toInt(), month.toInt(), day.toInt())
             // get the currentdate in localDate format
+            val current_date = LocalDate.now()
 
+            println(current_date)
             // get the current age with the .between(birthdate,currentdate) function
+            val period = Period.between(birthdate,current_date)
+
+            println("You are ${period.years} yeard old!")
         }
     }
 }
-
 }
+/*---------------------------------------------------- */

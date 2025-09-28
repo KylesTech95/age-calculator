@@ -1,0 +1,24 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Age in Minutes/Hours App: Users input their birthdate, and the app calculates their age in minutes or hours. This involves working with date and time objects, input handling, and displaying calculated results.",
+  "homepage": "https://github.com/kylestech95/age-calculator#readme",
+  "bugs": {
+    "url": "https://github.com/kylestech95/age-calculator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylestech95/age-calculator.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "execute":"java -jar calc-age.jar"
+  },
+  "dependencies": {
+    "chokidar-cli": "^3.0.0"
+  }
+}
