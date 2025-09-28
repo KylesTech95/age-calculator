@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="calc-age">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/calc-age.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
