@@ -9,3 +9,11 @@ npm <em>[run|urn]</em> jar
 
 2. __Execute .jar file with java runtime__ <br>
 npm <em>[run|urn]</em> execute
+
+<br>
+
+## Convert Kotlin to Java ARchive
+<img src="./media/calc-jar.png"/>
+
+## Program execution
+<img src="./media/calc-age.png"/>
