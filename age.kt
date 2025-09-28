@@ -1,24 +1,44 @@
 import java.time.LocalDate
 import java.time.Period
 
+// global variable - list of strings
+var global_list: List<String> = listOf("year", "month", "day")
 
+// get variable's type
+fun getVariableType(variable:Any) : String { // since we are getting a type, we can use any data type
+    val getclass = variable::class;
+    val simplename = getclass.simpleName;
+    // println(simplename)
+    return "$simplename"
+}
 
+// send out a command
 fun command(int:Int):String {
+    // helper function
+    fun dialogue(string:String):String{
+        if(getVariableType(string)!="String"){
+            return "Check the type and try again";
+        } else {
+            return "Enter the $string you were born"
+        }
+    }
+        // println(dialogue("year"))
+        // println(dialogue("month"))
+        // println(dialogue("day"))
+
         if(int==1){
-            return "Enter the year you were born"
+            return dialogue("year")
         } 
         else if(int > 1 && int < 3){
-            return "Enter the month you were born"
+            return dialogue("MONTH")
         }
         else {
-            return "Enter the day you were bord"
+            return dialogue("day")
         }
     }
 
 // main (test)
 fun main() {
-// type in a 4-digit number to represent the year
-
 // step1
 var cmd1 = command(1) // Enter your Birth Year
 println(cmd1)
@@ -39,6 +59,12 @@ if(year.count() == 4){
         var day = readln()
         if(day.count() <= 2){
             println("You wrote down the day of $day with a length of ${day.count()}!")
+
+            // get birthdate in localDate format
+
+            // get the currentdate in localDate format
+
+            // get the current age with the .between(birthdate,currentdate) function
         }
     }
 }
