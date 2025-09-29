@@ -7,7 +7,16 @@ import java.time.Duration
 import java.time.Period
 import java.time.format.DateTimeFormatter
 
+import java.util.Timer
+import java.util.TimerTask
+
+// function : update current time
+fun updateTime(current_time:String):String {
+    return current_time
+}
+
     fun main () {
+        
         val current_date = LocalDate.now()
         println("Today's date is $current_date\n")
 
@@ -27,4 +36,12 @@ import java.time.format.DateTimeFormatter
         val formatter2 = DateTimeFormatter.ofPattern("dd-MM-yyyy")
         val formatted_date = current_date.format(formatter2) // plug formatter into current_date
         println("Formatted current date:\n$formatted_date")
+
+      // schedule a delay with Timer() and TimerTask()
+        Timer().schedule(object : TimerTask() {
+                override fun run() {
+                    println("Executed after a delay!")
+                }
+            }, 3000)
+
     }
