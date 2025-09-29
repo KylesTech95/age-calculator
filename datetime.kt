@@ -10,8 +10,11 @@ import java.time.format.DateTimeFormatter
 import java.util.Timer
 import java.util.TimerTask
 
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
+
 // function : update current time
-fun updateTime(current_time:String):String {
+fun updateTime(current_time:LocalTime):LocalTime {
     return current_time
 }
 
@@ -37,11 +40,28 @@ fun updateTime(current_time:String):String {
         val formatted_date = current_date.format(formatter2) // plug formatter into current_date
         println("Formatted current date:\n$formatted_date")
 
-      // schedule a delay with Timer() and TimerTask()
+        // schedule a delay with Timer() and TimerTask()
         Timer().schedule(object : TimerTask() {
                 override fun run() {
-                    println("Executed after a delay!")
+                println("This is a delayed task!")
                 }
-            }, 3000)
+            }, 2000)
+
+
+    // set interval
+    val scheduler = Executors.newSingleThreadScheduledExecutor()
+    
+    scheduler.scheduleAtFixedRate({
+        println("Schedule Task 1:\nFirst Loop")
+    }, 0, 2, TimeUnit.SECONDS)
+
+    
+    val scheduler2 = Executors.newSingleThreadScheduledExecutor()
+
+    var counter = 0
+    scheduler2.scheduleAtFixedRate({
+        counter++
+        println("Schedule Task 2:\ncount: $counter")
+    },0, 1, TimeUnit.SECONDS )
 
     }
